@@ -22,15 +22,22 @@ li{
 	height: 134px;
 	width: 100%;
 }
+.expense_ng_logo img {
+	width: 75px;
+	height: 50px;
+	margin: 5px 0px 0px 90px;
+	position: absolute;
+}
+
 .ministry_list_logo{
 	color: #00945E;
 	font-size: 30px;
 	font: bold;
 	float: left;
     order: 1;
-    width: 25%;
+    width: 15%;
     line-height: 60px;
-    margin-left: 100px;
+    margin-left: 170px;
 }
 .ministry_list_navbar{
 	float: right;
@@ -71,12 +78,12 @@ li{
 }
 .ministry_list_description_body{
 	width: 100%;
-	height: 250px;
+	height: 382px;
 	text-align: center;
 	background: #1F2430;
 	color: white;
 	font-weight: bold;
-	padding-top: 100px;
+	padding-top: 180px;
 	color: white;
 	font-size: 25px;
 }
@@ -167,7 +174,8 @@ tr:nth-child(even) {
 		margin-left: 4%;
 	}
 	.ministry_list_logo{
-		margin-left: 50px;
+		margin-left: 70px;
+		font-size: 25px;
 	}
 	.ministry_list_page_title{
 		padding-left: 50px;
@@ -197,6 +205,9 @@ tr:nth-child(even) {
 @media screen and (max-width: 700px){
 	.ministry_list_body{
 		width: 98%;
+		margin-left: 1%;
+	}
+	.expense_ng_logo img {
 		margin-left: 1%;
 	}
 }
