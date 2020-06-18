@@ -1,3 +1,33 @@
+let data = [
+  {
+    ministry: "Ministry of Petroleum",
+    ministryHandle: "Abdulaz29562466",
+    minister: "Alhaji Abdulazeez",
+    ministerHandle: "Abdulaz29562466",
+    amount: 10000000,
+  },
+  {
+    ministry: "Ministry of Women Affairs",
+    ministryHandle: "aisha@buha.ri",
+    minister: "Aisha Buhari",
+    ministerHandle: "aisha@buha.ri",
+    amount: 50000000,
+  },
+  {
+    ministry: "Ministry of Education",
+    ministryHandle: "simeon979",
+    minister: "Adegbola Simeon",
+    ministerHandle: "simeon979",
+    amount: 30000000,
+  },
+  {
+    ministry: "Ministry of Internal Affairs",
+    ministryHandle: "tongueblastingcoder",
+    minister: "TongueBlasting Coder",
+    ministerHandle: "tongueblastingcoder",
+    amount: 40000000,
+  },
+];
 const get_ministry_list = ()=>{
 	$.ajax({
         data : {
@@ -13,15 +43,21 @@ const get_ministry_list = ()=>{
       	add_ministry_list(data);
     });
 }
-const add_ministry_list = ()=>{
-	ministry_list = document.createElement('tr');
-	ministry_list.className = 'ministry_list';
-	ministry_list.innerHTML = `<td>Ministry of Petroleum</td>
-	    <td class="Ministry_twitter_handle_link">Abdulaz29562466</td>
-	    <td>Alhaji Abdulazeez</td>
-	    <td class="Minister_twitter_handle_link">Abdulaz29562466</td>
-	    <td>N50,000,000,000</td>`;
-	$('.ministry_list_table table').append(ministry_list);
+const add_ministry_list = (data)=>{
+	for (let item of data) {
+		let amountInNaira = new Intl.NumberFormat("en-ng", {
+	      style: "currency",
+	      currency: "NGN",
+	    }).format(item.amount);
+		ministry_list = document.createElement('tr');
+		ministry_list.className = 'ministry_list';
+		ministry_list.innerHTML = `<td>${item.ministry}</td>
+		    <td class="ministry_twitter_handle_link">${item.ministryHandle}</td>
+		    <td>${item.minister}</td>
+		    <td class="minister_twitter_handle_link">${item.ministerHandle}</td>
+		    <td class="ministry_list_amount">${amountInNaira}</td>`;
+		$('.ministry_list_table table').append(ministry_list);
+	}
 }
 const create_link_to_twitter = (username) =>{
 	window.open(`https://twitter.com/${username}`,"_blank");
@@ -29,33 +65,32 @@ const create_link_to_twitter = (username) =>{
 const ministry_menu_button = () =>{
 	if($('.ministry_list_navbar').css('height') == '0px'){
 		$('.ministry_list_navbar').css('height', 'auto');
-		//$('.ministry_list_navbar').css('width', '100%');
 		$('.ministry_list_navbar').css('border-top', '1px solid white');
 	}else{
 		$('.ministry_list_navbar').css('height', '0px');
-		//$('.ministry_list_navbar').css('width', '0%');
 		$('.ministry_list_navbar').css('border-top', 'none');
 	}
 }
-const filter_box_list = ()=>{
-	if($('.filter_box_cover').css('height') == '0px'){
-		$('.filter_box_cover').css('height', '100px');
-		$('.filter_box_cover').css('border', '1px solid #dddddd');
-		$('.ministry_list_filter_body').css('height', '120px');
-	}else{
-		$('.filter_box_cover').css('height', '0px');
-		$('.filter_box_cover').css('border', 'none');
-		$('.ministry_list_filter_body').css('height', '40px');
-	}
-}
-$(document).on("click", ".Ministry_twitter_handle_link", function(){
+const search = ({ target: value }) => {
+  let regexp = new RegExp(value.value.toLowerCase());
+  let allMinistries = document.querySelectorAll("td:first-child");
+  for (let ministry of allMinistries) {
+    if (!regexp.test(ministry.textContent.toLowerCase())) {
+      ministry.parentElement.classList.add("remove");
+    } else {
+      ministry.parentElement.classList.remove("remove");
+    }
+  }
+};
+
+$(document).on("click", ".ministry_twitter_handle_link", function(){
 	username = $(this).html();
 	create_link_to_twitter(username);
 });
-$(document).on("click", ".Minister_twitter_handle_link", function(){
+$(document).on("click", ".minister_twitter_handle_link", function(){
 	username = $(this).html();
 	create_link_to_twitter(username);
 });
 $(document).on("click", "#ministry_list_menu_icon", ministry_menu_button);
-$(document).on("click", ".filter_box", filter_box_list);
-add_ministry_list();
+$(document).on("input", "#filter", search);
+add_ministry_list(data);

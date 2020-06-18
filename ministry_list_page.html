@@ -14,7 +14,7 @@
 	<!--============================begining of header section===============================-->
 	<header>
 		<div class="ministry_list_header">
-			<div class="expense_ng_logo"><img src="logo\Expenseng_logo.png" alt="ExpenseNg-logo"></div>
+			<div class="expense_ng_logo"><img src="image\Expenseng_logo.png" alt="ExpenseNg-logo"></div>
 			<div class="ministry_list_logo">EXPENSENG<span style="color: black">.COM</span></div>
 			<ul class="ministry_list_navbar">
 				<li><a href="#" class="ministry_list_navlink">Home</a></li>
@@ -37,16 +37,18 @@
 		</div>
 		<div class="ministry_list_body">
 			<div class="ministry_list_filter_body">
-				<div class="filter_box">
-					<div class="sort_data">Sort data</div>
-					<i class="fa fa-angle-down"></i>
-				</div>
-				<label class="filter_box_label">Filter</label>
-				<ul class="filter_box_cover">
-					<li class="filter_box_item">Sort data</li>
-					<li class="filter_box_item">Highest to lowest Amount</li>
-					<li class="filter_box_item">Lowest to Highest Amount</li>
-				</ul>
+	            <div class="search_box">
+	              <label class="search_label">Filter</label>
+	              <input class="search" id="filter" placeholder="Search Ministry..."/>
+            	</div>
+				<div class="sort_box">
+	              <label class="sort_box_label">Sort</label>
+	              <select placeholder="Sort">
+	                <option>Ministry</option>
+	                <option>Amount (highest first)</option>
+	                <option>Amount (lowest first)</option>
+	              </select>
+	            </div>
 			</div>
 			<div class="ministry_list_table">
 				<table>
