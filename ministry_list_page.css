@@ -91,6 +91,8 @@ li{
 	width: 100%;
 	height: 40px;
 	margin-top: 35px;
+	position: relative;
+	transition: all 0.5s ease;
 }
 .filter_box_label{
 	float: right;
@@ -102,7 +104,7 @@ li{
 .filter_box{
 	border: 1px solid #dddddd;
 	width: 150px;
-	height: 100%;
+	height: 40px;
 	float: right;
 	cursor: pointer;
 }
@@ -110,6 +112,31 @@ li{
 	margin-top: 10px;
 	float: right;
 	margin-right: 7px;
+}
+.sort_data{
+	float: left;
+	width: 110px;
+	font-size: 15px;
+	line-height: 40px;
+	margin-left: 10px;
+	color: #ddd;
+}
+.filter_box_cover{
+	position: absolute;
+    right: 0px;
+    top: 29px;
+    width: 250px;
+    height: 0px;
+    font-size: 17px;
+    line-height: 30px;
+    color: grey;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.filter_box_item{
+	cursor: pointer;
+	margin-left: -7px;
+    margin-top: 3px;
 }
 .ministry_list_table{
 	border: 1px solid #00945E;
