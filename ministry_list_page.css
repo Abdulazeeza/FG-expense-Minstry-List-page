@@ -1,175 +1,199 @@
-*{
-	box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
-body{
-	padding: 0px;
-	margin: 0px;
-	font-family: Lato;
-	font-style: normal;
-	position: relative;
-	overflow:hidden;
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  position: relative;
+  overflow: hidden;
 }
-header{
-	width: 100%;
-	height: 96px;
+header {
+  width: 100%;
+  height: 96px;
 }
-li{
-	list-style: none;
+li {
+  list-style: none;
 }
-.ministry_list_header{
-	height: 134px;
-	width: 100%;
+.ministry_list_header {
+  height: 134px;
+  width: 100%;
 }
-.ministry_list_logo{
-	color: #00945E;
-	font-size: 30px;
-	font: bold;
-	float: left;
-    order: 1;
-    width: 25%;
-    line-height: 60px;
-    margin-left: 100px;
+.ministry_list_logo {
+  color: #00945e;
+  font-size: 30px;
+  font: bold;
+  float: left;
+  order: 1;
+  width: 25%;
+  line-height: 60px;
+  margin-left: 100px;
 }
-.ministry_list_navbar{
-	float: right;
-	order: 2;
-	width: 65%;
-	padding: 0 1%;
-	transition: all 0.5s ease;
+.ministry_list_navbar {
+  float: right;
+  order: 2;
+  width: 65%;
+  padding: 0 1%;
+  transition: all 0.5s ease;
 }
-#ministry_list_menu_icon{
-	display: none;
-	float: right;
-	margin-top: 15px;
-	margin-right: 20px;
-	font-size: 25px;
-	cursor: pointer;
+#ministry_list_menu_icon {
+  display: none;
+  float: right;
+  margin-top: 15px;
+  margin-right: 20px;
+  font-size: 25px;
+  cursor: pointer;
 }
-.ministry_list_navlink{
-	float: left;
-	line-height: 30px;
-	font-size: 20px;
-	margin-left: 5%;
-	color: #323E48;
-	font-weight: bold;
+.ministry_list_navlink {
+  float: left;
+  line-height: 30px;
+  font-size: 20px;
+  margin-left: 5%;
+  color: #323e48;
+  font-weight: bold;
 }
-.ministry_list_page_title{
-	width: 100%;
-	height: 66px;
-	float: left;
-	order: 3;
-	background: #00945E;	
-	padding-left: 100px;
-	color: white;
-	font-size: 30px;
-	line-height: 66px;
+.ministry_list_page_title {
+  width: 100%;
+  height: 66px;
+  float: left;
+  order: 3;
+  background: #00945e;
+  padding-left: 100px;
+  color: white;
+  font-size: 30px;
+  line-height: 66px;
 }
-.ministry_list_section{
-	width: 100%;
+.ministry_list_section {
+  width: 100%;
 }
-.ministry_list_description_body{
-	width: 100%;
-	height: 250px;
-	text-align: center;
-	background: #1F2430;
-	color: white;
-	font-weight: bold;
-	padding-top: 100px;
-	color: white;
-	font-size: 25px;
+.ministry_list_description_body {
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  background: #1f2430;
+  color: white;
+  font-weight: bold;
+  padding-top: 100px;
+  color: white;
+  font-size: 25px;
 }
-.ministry_list_body{
-	width: 90%;
-	margin-left: 5%;
-	margin-top: 10px;
-	height: auto;
+.ministry_list_body {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  height: auto;
 }
-.ministry_list_filter_body{
-	float: right;
-	width: 100%;
-	height: 40px;
-	margin-top: 35px;
+.list_control {
+  width: 100%;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
-.filter_box_label{
-	float: right;
-	margin-right: 15px;
-	line-height: 40px;
-	color: #353A45;
-	margin-top: 5px;
+
+.list_control div {
+  line-height: 40px;
+  margin-top: 5px;
+  border-radius: 3px;
 }
-.filter_box{
-	border: 1px solid #dddddd;
-	width: 150px;
-	height: 100%;
-	float: right;
-	cursor: pointer;
+
+.list_control input {
+  color: #353a45;
+  width: 150px;
+  padding: 0.5em 0.5em;
+  border: 1px solid #dddddd;
 }
-.filter_box .fa-angle-down{
-	margin-top: 10px;
-	float: right;
-	margin-right: 7px;
+
+.list_control select {
+  width: 150px;
+  padding: 0.5em 0em;
+  border: 1px solid #dddddd;
 }
-.ministry_list_table{
-	border: 1px solid #00945E;
-	width: 100%;
-	margin-top: 35px;
-	float: left;
-	overflow-x:auto;
+
+.list_control label {
+  display: inline-block;
+  margin-right: 15px;
 }
-table{
-	width: 100%;
+
+.search_box {
 }
-td, th {
+
+.sort_box {
+}
+
+.ministry_list_table {
+  border: 1px solid #00945e;
+  width: 100%;
+  margin-top: 35px;
+  float: left;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+}
+td,
+th {
   text-align: left;
   padding: 8px;
 }
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-.Ministry_twitter_handle_link, .Minister_twitter_handle_link{
-	color: #6765EC;
-	cursor: pointer;
+.Ministry_twitter_handle_link,
+.Minister_twitter_handle_link {
+  color: #6765ec;
+  cursor: pointer;
 }
-@media screen and (max-width: 1220px){
-	.ministry_list_navbar{
-		width: 67%;
-	}
-	.ministry_list_navlink{
-		margin-left: 4%;
-	}
-	.ministry_list_logo{
-		margin-left: 50px;
-	}
-	.ministry_list_page_title{
-		padding-left: 50px;
-	}
+@media screen and (max-width: 1220px) {
+  .ministry_list_navbar {
+    width: 67%;
+  }
+  .ministry_list_navlink {
+    margin-left: 4%;
+  }
+  .ministry_list_logo {
+    margin-left: 50px;
+  }
+  .ministry_list_page_title {
+    padding-left: 50px;
+  }
 }
-@media screen and (max-width: 1050px){
-	#ministry_list_menu_icon{
-		display: block;
-	}
-	.ministry_list_navbar{
-		float: none;
-		position: absolute;
-		top: 110px;
-		width: 100%;
-		height: 0px;
-		z-index: 10;
-		text-align: center;
-		background: #00945E;
-		overflow: hidden;
-	}
-	.ministry_list_navlink{
-		float: none;
-		line-height: 50px;
-		color: white;
-	}
+@media screen and (max-width: 1050px) {
+  #ministry_list_menu_icon {
+    display: block;
+  }
+  .ministry_list_navbar {
+    float: none;
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    height: 0px;
+    z-index: 10;
+    text-align: center;
+    background: #00945e;
+    overflow: hidden;
+  }
+  .ministry_list_navlink {
+    float: none;
+    line-height: 50px;
+    color: white;
+  }
 }
-@media screen and (max-width: 700px){
-	.ministry_list_body{
-		width: 98%;
-		margin-left: 1%;
-	}
+@media screen and (max-width: 700px) {
+  .ministry_list_body {
+    width: 98%;
+    margin-left: 1%;
+  }
+}
+
+.remove {
+  display: none;
+}
+
+body {
+  transition: all ease 0.5s;
 }
